@@ -156,7 +156,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <h1 className="text-2xl font-black text-black transform -skew-x-12 bg-blue-500 text-white px-3 py-1 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+              <h1 className="text-2xl font-black transform -skew-x-12 bg-blue-500 text-white px-3 py-1 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
                 WORTHY.AI
               </h1>
             </div>
@@ -335,28 +335,39 @@ export default function Home() {
         {/* Human figures working with data */}
         <div className="absolute top-32 left-20 flex flex-col items-center">
           {/* Person at computer */}
-          <div className="w-10 h-10 bg-blue-500 border-3 border-black rounded-full shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]"></div>
-          <div className="w-6 h-14 bg-yellow-400 border-3 border-black mt-1 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]"></div>
+          <div className="w-8 h-8 bg-blue-500 border-2 border-black rounded-full shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"></div>
+          <div className="w-5 h-12 bg-yellow-400 border-2 border-black mt-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"></div>
           {/* Arms typing */}
-          <div className="absolute top-12 -left-3 w-8 h-2 bg-red-500 border-2 border-black transform rotate-6 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"></div>
-          <div className="absolute top-12 -right-3 w-8 h-2 bg-red-500 border-2 border-black transform -rotate-6 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"></div>
+          <div className="absolute top-10 -left-3 w-6 h-2 bg-red-500 border border-black transform rotate-12 shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
+          <div className="absolute top-10 -right-3 w-6 h-2 bg-red-500 border border-black transform -rotate-12 shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
+          {/* Legs */}
+          <div className="absolute top-20 -left-1 w-2 h-8 bg-green-400 border border-black transform rotate-3 shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
+          <div className="absolute top-20 right-1 w-2 h-8 bg-green-400 border border-black transform -rotate-3 shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
           {/* Computer screen */}
-          <div className="absolute top-6 left-8 w-12 h-8 bg-white border-3 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]">
-            <div className="w-full h-2 bg-green-400 border-b-2 border-black"></div>
+          <div className="absolute top-6 left-8 w-10 h-8 bg-white border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+            <div className="w-full h-2 bg-green-400 border-b border-black"></div>
+            <div className="absolute top-3 left-1 w-1 h-1 bg-black"></div>
+            <div className="absolute top-4 left-1 w-4 h-1 bg-black"></div>
+            <div className="absolute top-5 left-1 w-3 h-1 bg-black"></div>
           </div>
         </div>
 
         {/* Person presenting */}
         <div className="absolute bottom-40 right-24 flex flex-col items-center">
-          <div className="w-9 h-9 bg-purple-500 border-3 border-black transform rotate-6 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]"></div>
-          <div className="w-5 h-12 bg-blue-600 border-3 border-black mt-1 transform skew-x-3 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]"></div>
-          {/* One arm pointing */}
-          <div className="absolute top-10 -right-6 w-10 h-2 bg-yellow-500 border-2 border-black transform -rotate-12 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"></div>
+          <div className="w-7 h-7 bg-purple-500 border-2 border-black rounded-full shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"></div>
+          <div className="w-4 h-10 bg-blue-600 border-2 border-black mt-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"></div>
+          {/* Arms - one pointing, one at side */}
+          <div className="absolute top-8 -left-2 w-4 h-2 bg-yellow-500 border border-black transform rotate-6 shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
+          <div className="absolute top-8 -right-3 w-6 h-2 bg-yellow-500 border border-black transform -rotate-20 shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
+          {/* Legs */}
+          
+          
           {/* Chart being presented */}
-          <div className="absolute top-2 right-8 w-16 h-12 bg-white border-3 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]">
-            <div className="absolute bottom-1 left-1 w-2 h-6 bg-blue-500 border border-black"></div>
-            <div className="absolute bottom-1 left-4 w-2 h-8 bg-yellow-400 border border-black"></div>
-            <div className="absolute bottom-1 left-7 w-2 h-4 bg-red-500 border border-black"></div>
+          <div className="absolute top-2 right-6 w-12 h-10 bg-white border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+            <div className="absolute bottom-1 left-1 w-2 h-4 bg-blue-500 border border-black"></div>
+            <div className="absolute bottom-1 left-3 w-2 h-6 bg-yellow-400 border border-black"></div>
+            <div className="absolute bottom-1 left-5 w-2 h-3 bg-red-500 border border-black"></div>
+            <div className="absolute bottom-1 left-7 w-2 h-5 bg-green-500 border border-black"></div>
           </div>
         </div>
 
@@ -405,32 +416,22 @@ export default function Home() {
         <div className="absolute top-20 left-32 w-2 h-16 bg-black transform rotate-45"></div>
         <div className="absolute top-32 right-24 w-12 h-12 bg-blue-400 border-4 border-black transform rotate-45 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"></div>
 
-        <div className="absolute bottom-40 right-20 w-20 h-6 bg-red-400 border-4 border-black transform skew-y-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"></div>
+        
 
         {/* Human figures on journey path */}
         <div className="absolute top-24 left-32 flex flex-col items-center">
           {/* Person walking forward */}
-          <div className="w-8 h-8 bg-blue-500 border-3 border-black rounded-full shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]"></div>
-          <div className="w-4 h-10 bg-yellow-400 border-3 border-black mt-1 transform skew-x-6 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]"></div>
+          <div className="w-6 h-6 bg-blue-500 border-2 border-black rounded-full shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"></div>
+          <div className="w-4 h-10 bg-yellow-400 border-2 border-black mt-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"></div>
           {/* Walking arms */}
-          <div className="absolute top-8 -left-2 w-6 h-2 bg-red-500 border-2 border-black transform rotate-12 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"></div>
-          <div className="absolute top-8 -right-2 w-6 h-2 bg-red-500 border-2 border-black transform -rotate-45 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"></div>
+          <div className="absolute top-8 -left-2 w-4 h-2 bg-red-500 border border-black transform rotate-20 shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
+          <div className="absolute top-8 -right-2 w-4 h-2 bg-red-500 border border-black transform -rotate-30 shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
           {/* Walking legs */}
-          <div className="absolute top-16 -left-1 w-2 h-8 bg-green-400 border-2 border-black transform rotate-6 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"></div>
-          <div className="absolute top-16 right-1 w-2 h-6 bg-green-400 border-2 border-black transform -rotate-12 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"></div>
-        </div>
-
-        {/* Person climbing steps */}
-        <div className="absolute bottom-32 right-32 flex flex-col items-center">
-          <div className="w-7 h-7 bg-purple-500 border-3 border-black transform rotate-12 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]"></div>
-          <div className="w-4 h-8 bg-blue-600 border-3 border-black mt-1 transform -skew-x-6 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]"></div>
-          {/* Climbing arms */}
-          <div className="absolute top-6 -left-3 w-8 h-2 bg-yellow-500 border-2 border-black transform -rotate-30 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"></div>
-          <div className="absolute top-6 -right-3 w-8 h-2 bg-yellow-500 border-2 border-black transform rotate-60 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"></div>
-          {/* Steps */}
-          <div className="absolute top-12 right-6 w-4 h-2 bg-gray-400 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"></div>
-          <div className="absolute top-14 right-8 w-4 h-2 bg-gray-400 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"></div>
-          <div className="absolute top-16 right-10 w-4 h-2 bg-gray-400 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"></div>
+          <div className="absolute top-16 -left-1 w-2 h-8 bg-green-400 border border-black transform rotate-10 shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
+          <div className="absolute top-16 right-1 w-2 h-6 bg-green-400 border border-black transform -rotate-20 shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
+          {/* Motion lines */}
+          <div className="absolute top-4 left-8 w-4 h-1 bg-black"></div>
+          <div className="absolute top-6 left-10 w-3 h-1 bg-black"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -492,24 +493,38 @@ export default function Home() {
         {/* Human figures using the platform */}
         <div className="absolute top-16 right-20 flex flex-col items-center">
           {/* Person with laptop */}
-          <div className="w-9 h-9 bg-blue-500 border-3 border-black rounded-full shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]"></div>
-          <div className="w-5 h-12 bg-yellow-400 border-3 border-black mt-1 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]"></div>
+          <div className="w-7 h-7 bg-blue-500 border-2 border-black rounded-full shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"></div>
+          <div className="w-4 h-10 bg-yellow-400 border-2 border-black mt-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"></div>
           {/* Arms on laptop */}
-          <div className="absolute top-10 -left-2 w-6 h-2 bg-red-500 border-2 border-black transform rotate-12 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"></div>
-          <div className="absolute top-10 -right-2 w-6 h-2 bg-red-500 border-2 border-black transform -rotate-12 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"></div>
+          <div className="absolute top-9 -left-2 w-4 h-2 bg-red-500 border border-black transform rotate-15 shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
+          <div className="absolute top-9 -right-2 w-4 h-2 bg-red-500 border border-black transform -rotate-15 shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
+          {/* Legs */}
+          <div className="absolute top-17 -left-0.5 w-2 h-5 bg-green-400 border border-black shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
+          <div className="absolute top-17 right-1 w-2 h-5 bg-green-400 border border-black shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
           {/* Laptop */}
-          <div className="absolute top-14 -left-1 w-8 h-6 bg-gray-300 border-3 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]">
-            <div className="w-full h-2 bg-blue-400 border-b-2 border-black"></div>
+          <div className="absolute top-11 -left-1 w-8 h-5 bg-gray-300 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+            <div className="w-full h-2 bg-blue-400 border-b border-black"></div>
+            <div className="absolute top-3 left-1 w-3 h-1 bg-black"></div>
           </div>
         </div>
 
         {/* Person giving thumbs up */}
         <div className="absolute bottom-24 left-24 flex flex-col items-center">
-          <div className="w-8 h-8 bg-green-500 border-3 border-black rounded-full shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]"></div>
-          <div className="w-4 h-10 bg-purple-400 border-3 border-black mt-1 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]"></div>
+          <div className="w-6 h-6 bg-green-500 border-2 border-black rounded-full shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+            {/* Happy face */}
+            <div className="absolute top-2 left-1 w-1 h-1 bg-black rounded-full"></div>
+            <div className="absolute top-2 right-1 w-1 h-1 bg-black rounded-full"></div>
+            <div className="absolute bottom-1 left-1 w-4 h-1 bg-black rounded-full"></div>
+          </div>
+          <div className="w-4 h-10 bg-purple-400 border-2 border-black mt-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"></div>
           {/* Thumbs up */}
-          <div className="absolute top-8 -right-4 w-3 h-6 bg-yellow-500 border-2 border-black transform -rotate-12 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"></div>
-          <div className="absolute top-6 -right-5 w-2 h-3 bg-yellow-500 border-2 border-black shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
+          <div className="absolute top-8 -right-2 w-2 h-4 bg-yellow-500 border border-black transform -rotate-15 shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
+          <div className="absolute top-6 -right-2 w-2 h-2 bg-yellow-500 border border-black shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
+          {/* Other arm */}
+          <div className="absolute top-8 -left-3 w-4 h-2 bg-yellow-500 border border-black transform rotate-10 shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
+          {/* Legs */}
+          <div className="absolute top-16 -left-1 w-2 h-8 bg-green-400 border border-black shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
+          <div className="absolute top-16 right-1 w-2 h-8 bg-green-400 border border-black shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -680,25 +695,32 @@ export default function Home() {
         {/* Human figures representing different pricing tiers */}
         <div className="absolute top-20 left-16 flex flex-col items-center">
           {/* Basic user */}
-          <div className="w-6 h-6 bg-gray-400 border-2 border-black rounded-full shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"></div>
-          <div className="w-3 h-8 bg-gray-300 border-2 border-black mt-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"></div>
+          <div className="w-5 h-5 bg-gray-400 border border-black rounded-full shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
+          <div className="w-3 h-8 bg-gray-300 border border-black mt-1 shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
+          {/* Basic arms */}
+          <div className="absolute top-6 -left-1 w-2 h-1 bg-gray-500 border border-black shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
+          <div className="absolute top-6 -right-1 w-2 h-1 bg-gray-500 border border-black shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
+          {/* Basic legs */}
+          <div className="absolute top-13 -left-0.5 w-1 h-5 bg-gray-400 border border-black shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
+          <div className="absolute top-13 right-1 w-1 h-5 bg-gray-400 border border-black shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
         </div>
 
         <div className="absolute top-20 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
           {/* Professional user */}
-          <div className="w-10 h-10 bg-blue-500 border-3 border-black rounded-full shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]"></div>
-          <div className="w-6 h-14 bg-blue-400 border-3 border-black mt-1 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]"></div>
+          <div className="w-7 h-7 bg-blue-500 border-2 border-black rounded-full shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"></div>
+          <div className="w-5 h-10 bg-blue-400 border-2 border-black mt-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"></div>
+          {/* Professional arms */}
+          <div className="absolute top-8 -left-2 w-4 h-2 bg-yellow-500 border border-black transform rotate-10 shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
+          <div className="absolute top-8 -right-2 w-4 h-2 bg-yellow-500 border border-black transform -rotate-10 shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
+          {/* Professional legs */}
+          <div className="absolute top-17 -left-1 w-2 h-8 bg-green-400 border border-black shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
+          <div className="absolute top-17 right-1 w-2 h-8 bg-green-400 border border-black shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
           {/* Professional badge */}
-          <div className="absolute -top-2 -right-2 w-4 h-4 bg-yellow-400 border-2 border-black rounded-full shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"></div>
-        </div>
-
-        <div className="absolute top-20 right-16 flex flex-col items-center">
-          {/* Enterprise user */}
-          <div className="w-12 h-12 bg-purple-500 border-4 border-black transform rotate-12 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"></div>
-          <div className="w-8 h-16 bg-purple-400 border-4 border-black mt-1 transform skew-x-3 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"></div>
-          {/* Enterprise crown */}
-          <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-6 h-3 bg-yellow-400 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"></div>
-          <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-yellow-400 border border-black"></div>
+          <div className="absolute -top-1 -right-1 w-3 h-3 bg-yellow-400 border border-black rounded-full shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]">
+            <div className="absolute top-1 left-1 w-1 h-1 bg-black rounded-full"></div>
+          </div>
+          {/* Briefcase */}
+          <div className="absolute top-10 left-6 w-4 h-3 bg-brown-600 border border-black shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -778,23 +800,10 @@ export default function Home() {
       <section className="py-20 bg-green-200 border-b-4 border-black relative overflow-hidden">
         {/* Newsletter decorative elements */}
         <div className="absolute top-10 left-16 w-12 h-3 bg-blue-400 border-2 border-black transform rotate-6"></div>
-        <div className="absolute top-20 right-20 w-3 h-12 bg-yellow-400 border-2 border-black transform -rotate-12"></div>
+        
        
 
-        {/* Human figure reading newsletter */}
-        <div className="absolute top-16 right-24 flex flex-col items-center">
-          <div className="w-8 h-8 bg-blue-500 border-3 border-black rounded-full shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]"></div>
-          <div className="w-4 h-10 bg-yellow-400 border-3 border-black mt-1 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]"></div>
-          {/* Arms holding newsletter */}
-          <div className="absolute top-8 -left-3 w-8 h-2 bg-red-500 border-2 border-black transform rotate-6 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"></div>
-          <div className="absolute top-8 -right-3 w-8 h-2 bg-red-500 border-2 border-black transform -rotate-6 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"></div>
-          {/* Newsletter/document */}
-          <div className="absolute top-12 -left-1 w-8 h-10 bg-white border-3 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]">
-            <div className="w-full h-1 bg-black mt-1"></div>
-            <div className="w-3/4 h-1 bg-black mt-1"></div>
-            <div className="w-full h-1 bg-black mt-1"></div>
-          </div>
-        </div>
+        
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h3 className="text-3xl md:text-5xl font-black text-black mb-4 font-display">
