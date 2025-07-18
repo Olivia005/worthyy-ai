@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -35,11 +35,68 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState("jobseekers");
 
   const stats = [
-    { number: "2,500+", label: "Salary Data Points" },
-    { number: "87%", label: "Accuracy Rate" },
-    { number: "5,000+", label: "Companies" },
-    { number: "15k+", label: "Happy Users" },
+    { number: "2,500+", label: "Salary Data Points", value: 2500, suffix: "+" },
+    { number: "87%", label: "Accuracy Rate", value: 87, suffix: "%" },
+    { number: "5,000+", label: "Companies", value: 5000, suffix: "+" },
+    { number: "15k+", label: "Happy Users", value: 15000, suffix: "+" },
   ];
+
+  // Counter component for animated numbers
+  const Counter = ({ value, suffix, duration = 2000 }: { value: number; suffix: string; duration?: number }) => {
+    const [count, setCount] = useState(0);
+    const [isVisible, setIsVisible] = useState(false);
+    const counterRef = useRef<HTMLSpanElement>(null);
+
+    useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting && !isVisible) {
+            setIsVisible(true);
+          }
+        },
+        { threshold: 0.1 }
+      );
+
+      if (counterRef.current) {
+        observer.observe(counterRef.current);
+      }
+
+      return () => observer.disconnect();
+    }, [isVisible]);
+
+    useEffect(() => {
+      if (isVisible) {
+        let startTime: number | undefined;
+        const animate = (timestamp: number) => {
+          if (!startTime) startTime = timestamp;
+          const progress = Math.min((timestamp - startTime) / duration, 1);
+          
+          const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+          const currentCount = Math.floor(easeOutQuart * value);
+          
+          setCount(currentCount);
+          
+          if (progress < 1) {
+            requestAnimationFrame(animate);
+          }
+        };
+        requestAnimationFrame(animate);
+      }
+    }, [isVisible, value, duration]);
+
+    const formatNumber = (num: number): string => {
+      if (num >= 1000) {
+        return (num / 1000).toFixed(num % 1000 === 0 ? 0 : 1) + "k";
+      }
+      return num.toLocaleString();
+    };
+
+    return (
+      <span ref={counterRef}>
+        {formatNumber(count)}{suffix}
+      </span>
+    );
+  };
 
   const features = [
     {
@@ -47,35 +104,41 @@ export default function Home() {
       title: "Data-Driven Insights",
       description:
         "Access comprehensive salary data and market trends to make informed decisions.",
+      color: "bg-white hover:bg-blue-100 transition-colors",
     },
     {
       icon: <Building2 className="w-8 h-8" />,
       title: "Company Comparisons",
       description:
         "Compare compensation packages across different companies and industries.",
+      color: "bg-white hover:bg-red-200 transition-colors",
     },
     {
       icon: <Shield className="w-8 h-8" />,
       title: "Privacy First",
       description:
         "Your data is encrypted and protected with enterprise-grade security.",
+      color: "bg-white hover:bg-green-100 transition-colors",
     },
     {
       icon: <Clock className="w-8 h-8" />,
       title: "Real-Time Updates",
       description:
         "Get instant notifications about market changes and new opportunities.",
+      color: "bg-white hover:bg-pink-200 transition-colors",
     },
     {
       icon: <BarChart3 className="w-8 h-8" />,
       title: "Career Growth",
       description: "Track your career progression and salary growth over time.",
+      color: "bg-white hover:bg-yellow-200 transition-colors",
     },
     {
       icon: <Users className="w-8 h-8" />,
       title: "Expert Support",
       description:
         "Get personalized advice from our team of compensation experts.",
+      color: "bg-white hover:bg-purple-300 transition-colors",
     },
   ];
 
@@ -85,24 +148,28 @@ export default function Home() {
       title: "Create Your Profile",
       description:
         "Set up your professional profile with your experience, skills, and career goals. Our AI will analyze your background to provide personalized insights.",
+      color: "bg-yellow-100 transition-colors",
     },
     {
       step: "02",
       title: "Input Your Data",
       description:
         "Enter your current compensation details, including salary, benefits, and equity. We'll compare it with real-time market data from similar roles.",
+      color: "bg-blue-200 transition-colors",
     },
     {
       step: "03",
       title: "Get Market Insights",
       description:
         "Receive comprehensive analysis of your market position, including salary ranges, benefits comparison, and industry trends specific to your role.",
+      color: "bg-pink-200 transition-colors",
     },
     {
       step: "04",
       title: "Take Action",
       description:
         "Use our AI-powered insights to negotiate better compensation or make informed career decisions. Get personalized recommendations for your next steps.",
+      color: "bg-teal-200 transition-colors",
     },
   ];
 
@@ -270,7 +337,7 @@ export default function Home() {
 
           <h2 className="text-4xl md:text-7xl font-black text-black mb-6 leading-tight">
             <span className="font-black">KNOW YOUR TRUE </span>
-            <span className="bg-blue-500 text-white px-4 py-2 transform -skew-x-12 inline-block border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
+            <span className="bg-blue-500 text-white px-4 py-2 transform -skew-x-12 inline-block border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] animate-pulse hover:animate-bounce transition-all duration-300 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:scale-105">
               <span className="font-black">WORTH</span>
             </span>
             <br className="font-black" />
@@ -308,7 +375,7 @@ export default function Home() {
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-3xl md:text-6xl font-black text-black mb-2 transform -skew-x-12 font-display">
-                  {stat.number}
+                  <Counter value={stat.value} suffix={stat.suffix} />
                 </div>
                 <div className="text-lg font-display font-semibold text-black">
                   {stat.label}
@@ -341,7 +408,7 @@ export default function Home() {
             {features.map((feature, index) => (
               <Card
                 key={index}
-                className="border-2 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 hover:bg-blue-100 transition-all"
+                className={`border-2 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1  transition-all ${feature.color}`}
               >
                 <CardHeader>
                   <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mb-4 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
@@ -363,7 +430,7 @@ export default function Home() {
       </section>
 
       {/* Journey Section */}
-      <section className="py-20 bg-purple-200 border-b-4 border-black relative overflow-hidden">
+      <section className="py-20 bg-purple-100 border-b-4 border-black relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h3 className="text-3xl md:text-5xl font-black text-black mb-4 font-display">
@@ -382,7 +449,7 @@ export default function Home() {
             {steps.map((step, index) => (
               <Card
                 key={index}
-                className="border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] bg-white"
+                className={`border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] ${step.color}`}
               >
                 <CardHeader>
                   <div className="flex items-center gap-4 mb-4">
@@ -474,7 +541,7 @@ export default function Home() {
                     </label>
                     <Input
                       placeholder="e.g., Google"
-                      className="border-2 border-black font-display font-medium shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+                      className="border-2 border-black py-5 font-display font-medium shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
                     />
                   </div>
                   <div>
@@ -483,16 +550,16 @@ export default function Home() {
                     </label>
                     <Input
                       placeholder="e.g., Senior Frontend Developer"
-                      className="border-2 border-black font-display font-medium shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+                      className="border-2 border-black py-5 font-display font-medium shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
                     />
                   </div>
                   <div>
-                    <label className="block text-md font-bold text-black mb-2 font-display">
+                    <label className="block text-md  font-bold text-black mb-2 font-display">
                       Offered Salary (Optional)
                     </label>
                     <Input
                       placeholder="e.g., 120000"
-                      className="border-2 border-black font-display font-medium shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+                      className="border-2 border-black py-5 font-display font-medium shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
                     />
                   </div>
                   <div>
@@ -501,7 +568,7 @@ export default function Home() {
                     </label>
                     <Input
                       placeholder="e.g., 5"
-                      className="border-2 border-black font-display font-medium shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+                      className="border-2 border-black py-5 font-display font-medium shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
                     />
                   </div>
                   <div>
@@ -510,11 +577,11 @@ export default function Home() {
                     </label>
                     <Input
                       placeholder="e.g., React, TypeScript, Node.js"
-                      className="border-2 border-black font-display font-medium shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+                      className="border-2 border-black  py-5 font-display font-medium shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
                     />
                   </div>
                   <div className="flex justify-center">
-                    <Button className="w-1/2 mt-6 mb-6 bg-blue-500 hover:bg-blue-600 text-white font-bold font-display text-lg py-5 border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transform hover:translate-x-1 hover:translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all">
+                    <Button className="w-full mt-4 mb-6 bg-blue-500 hover:bg-blue-600 text-white font-bold font-display text-lg py-5 border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transform hover:translate-x-1 hover:translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all">
                       CHECK IF IT'S WORTH IT
                     </Button>
                   </div>
@@ -545,7 +612,7 @@ export default function Home() {
                     </label>
                     <Input
                       placeholder="GitHub profile URL"
-                      className="border-2 border-black font-display font-medium shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+                      className="border-2 border-black py-5 font-display font-medium shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
                     />
                   </div>
                   <div>
@@ -554,11 +621,11 @@ export default function Home() {
                     </label>
                     <Input
                       placeholder="LinkedIn profile URL"
-                      className="border-2 border-black font-display font-medium shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+                      className="border-2 border-black py-5 font-display font-medium shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
                     />
                   </div>
                   <div className="flex justify-center">
-                    <Button className="w-1/2 mt-6 mb-6 bg-blue-500 hover:bg-blue-600 text-white font-bold font-display text-lg py-5 border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transform hover:translate-x-1 hover:translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all">
+                     <Button className="w-full mt-4 mb-6 bg-blue-500 hover:bg-blue-600 text-white font-bold font-display text-lg py-5 border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transform hover:translate-x-1 hover:translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all">
                       ANALYZE CANDIDATE
                     </Button>
                   </div>
@@ -595,16 +662,15 @@ export default function Home() {
             {plans.map((plan, index) => (
               <Card
                 key={index}
-                className={`border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] bg-white relative ${
-                  plan.popular ? "ring-6 ring-yellow-400" : ""
+                className={`border-4 border-black shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] bg-white relative ${
+                  plan.popular ? "ring-6 ring-yellow-400 " : ""
                 }`}
               >
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                     <Badge className="bg-yellow-400 text-black border-2 border-black font-bold px-4 py-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] relative">
                       MOST POPULAR
-                      {/* Popular badge accent */}
-                      <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 border border-black rounded-full"></div>
+                      
                     </Badge>
                   </div>
                 )}
@@ -654,7 +720,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h3 className="text-3xl md:text-5xl font-black text-black mb-4 font-display">
             STAY UPDATED WITH{" "}
-            <span className="bg-blue-500 text-white px-4 py-2 transform -skew-x-12 inline-block border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
+            <span className="bg-blue-500 mt-4 text-white px-4 py-2 transform -skew-x-12 inline-block border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
               MARKET INSIGHTS
             </span>
           </h3>
@@ -666,9 +732,9 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
             <Input
               placeholder="Enter your email"
-              className="border-2 border-black font-display font-medium shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex-1"
+              className="border-2 border-black py-5 font-display font-medium shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex-1"
             />
-            <Button className="bg-blue-500 hover:bg-blue-600 text-white font-bold font-display border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transform hover:translate-x-1 hover:translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all">
+            <Button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-5 font-display border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transform hover:translate-x-1 hover:translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all">
               SUBSCRIBE
             </Button>
           </div>
