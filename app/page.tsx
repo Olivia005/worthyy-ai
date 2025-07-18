@@ -262,8 +262,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-blue-50 to-blue-100 border-b-4 border-black relative overflow-hidden">
         {/* Neo-brutalism geometric figures */}
-
-        <div className="absolute top-1/2 right-10 w-24 h-12 bg-green-400 border-4 border-black transform skew-x-12 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]"></div>
+        
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Badge className="mb-6 bg-yellow-400 text-black border-2 border-black font-semibold text-lg px-4 py-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
@@ -306,8 +305,8 @@ export default function Home() {
       {/* Stats Section */}
       <section className="py-16 bg-yellow-400 border-b-4 border-black relative overflow-hidden">
         {/* Abstract shapes for stats section */}
-        <div className="absolute top-5 left-5 w-8 h-8 bg-black transform rotate-45"></div>
-        <div className="absolute top-5 right-5 w-8 h-8 bg-black transform rotate-45"></div>
+        <div className="absolute top-5 left-5 w-8 h-8 bg-black rounded-lg transform rotate-45"></div>
+        <div className="absolute top-5 right-5 w-8 h-8 bg-black rounded-lg transform rotate-45"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -330,45 +329,19 @@ export default function Home() {
         id="features"
         className="py-20 bg-white border-b-4 border-black relative overflow-hidden"
       >
-        {/* Scattered geometric elements */}
+        
 
-        {/* Human figures working with data */}
-        <div className="absolute top-32 left-20 flex flex-col items-center">
-          {/* Person at computer */}
-          <div className="w-8 h-8 bg-blue-500 border-2 border-black rounded-full shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"></div>
-          <div className="w-5 h-12 bg-yellow-400 border-2 border-black mt-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"></div>
-          {/* Arms typing */}
-          <div className="absolute top-10 -left-3 w-6 h-2 bg-red-500 border border-black transform rotate-12 shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
-          <div className="absolute top-10 -right-3 w-6 h-2 bg-red-500 border border-black transform -rotate-12 shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
-          {/* Legs */}
-          <div className="absolute top-20 -left-1 w-2 h-8 bg-green-400 border border-black transform rotate-3 shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
-          <div className="absolute top-20 right-1 w-2 h-8 bg-green-400 border border-black transform -rotate-3 shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
-          {/* Computer screen */}
-          <div className="absolute top-6 left-8 w-10 h-8 bg-white border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
-            <div className="w-full h-2 bg-green-400 border-b border-black"></div>
-            <div className="absolute top-3 left-1 w-1 h-1 bg-black"></div>
-            <div className="absolute top-4 left-1 w-4 h-1 bg-black"></div>
-            <div className="absolute top-5 left-1 w-3 h-1 bg-black"></div>
-          </div>
+        {/* Colorful arrow - left side */}
+        <div className="absolute top-1/2 left-16 w-19 h-9 bg-orange-500 border-3 border-black rounded-xl items-center transform -rotate-12 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+          Features
         </div>
 
-        {/* Person presenting */}
-        <div className="absolute bottom-40 right-24 flex flex-col items-center">
-          <div className="w-7 h-7 bg-purple-500 border-2 border-black rounded-full shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"></div>
-          <div className="w-4 h-10 bg-blue-600 border-2 border-black mt-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"></div>
-          {/* Arms - one pointing, one at side */}
-          <div className="absolute top-8 -left-2 w-4 h-2 bg-yellow-500 border border-black transform rotate-6 shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
-          <div className="absolute top-8 -right-3 w-6 h-2 bg-yellow-500 border border-black transform -rotate-20 shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
-          {/* Legs */}
-          
-          
-          {/* Chart being presented */}
-          <div className="absolute top-2 right-6 w-12 h-10 bg-white border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
-            <div className="absolute bottom-1 left-1 w-2 h-4 bg-blue-500 border border-black"></div>
-            <div className="absolute bottom-1 left-3 w-2 h-6 bg-yellow-400 border border-black"></div>
-            <div className="absolute bottom-1 left-5 w-2 h-3 bg-red-500 border border-black"></div>
-            <div className="absolute bottom-1 left-7 w-2 h-5 bg-green-500 border border-black"></div>
-          </div>
+        {/* Chart being presented */}
+        <div className="absolute bottom-40 right-24 w-12 h-10 bg-white border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+          <div className="absolute bottom-1 left-1 w-2 h-4 bg-blue-500 border border-black"></div>
+          <div className="absolute bottom-1 left-3 w-2 h-6 bg-yellow-400 border border-black"></div>
+          <div className="absolute bottom-1 left-5 w-2 h-3 bg-red-500 border border-black"></div>
+          <div className="absolute bottom-1 left-7 w-2 h-5 bg-green-500 border border-black"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -412,27 +385,39 @@ export default function Home() {
       {/* Journey Section */}
       <section className="py-20 bg-purple-200 border-b-4 border-black relative overflow-hidden">
         {/* Journey path visual elements */}
-        <div className="absolute top-10 left-20 w-16 h-2 bg-black transform rotate-12"></div>
-        <div className="absolute top-20 left-32 w-2 h-16 bg-black transform rotate-45"></div>
-        <div className="absolute top-32 right-24 w-12 h-12 bg-blue-400 border-4 border-black transform rotate-45 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"></div>
-
+        <div className="absolute top-10 left-20 w-16 h-2 bg-black rounded-full transform rotate-12"></div>
+        <div className="absolute top-20 left-32 w-2 h-16 bg-black rounded-full transform rotate-45"></div>
         
 
-        {/* Human figures on journey path */}
-        <div className="absolute top-24 left-32 flex flex-col items-center">
-          {/* Person walking forward */}
-          <div className="w-6 h-6 bg-blue-500 border-2 border-black rounded-full shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"></div>
-          <div className="w-4 h-10 bg-yellow-400 border-2 border-black mt-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"></div>
-          {/* Walking arms */}
-          <div className="absolute top-8 -left-2 w-4 h-2 bg-red-500 border border-black transform rotate-20 shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
-          <div className="absolute top-8 -right-2 w-4 h-2 bg-red-500 border border-black transform -rotate-30 shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
-          {/* Walking legs */}
-          <div className="absolute top-16 -left-1 w-2 h-8 bg-green-400 border border-black transform rotate-10 shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
-          <div className="absolute top-16 right-1 w-2 h-6 bg-green-400 border border-black transform -rotate-20 shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
-          {/* Motion lines */}
-          <div className="absolute top-4 left-8 w-4 h-1 bg-black"></div>
-          <div className="absolute top-6 left-10 w-3 h-1 bg-black"></div>
+        {/* Neo-brutalism mobile/app mockup - right side */}
+        <div className="absolute top-16 right-8 w-56 h-36 bg-black border-6 border-black rounded-xl shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transform -rotate-6">
+          {/* Header with navigation */}
+          <div className="w-full h-8 bg-lime-400 border-b-2 border-black rounded-t-xl flex items-center justify-between px-2">
+            <div className="flex space-x-1">
+              <div className="w-6 h-4 bg-blue-500 border border-black rounded-md font-bold text-xs text-white flex items-center justify-center">W</div>
+            </div>
+            <div className="flex space-x-1 text-xs font-bold">
+              <span className="bg-white border border-black rounded-md px-1">Services</span>
+              <span className="bg-white border border-black rounded-md px-1">Work</span>
+              <span className="bg-white border border-black rounded-md px-1">Clients</span>
+            </div>
+          </div>
+          {/* Content area with colorful sections */}
+          <div className="p-2 space-y-1">
+            <div className="w-full h-4 bg-lime-400 border-2 border-white rounded-lg flex items-center px-1">
+              <span className="font-black text-xs text-black">Shaping Next Gen</span>
+            </div>
+            <div className="flex space-x-1">
+              <div className="w-20 h-6 bg-yellow-400 border-2 border-white rounded-lg flex items-center justify-center">
+                <span className="font-black text-xs">ADVERTISING</span>
+              </div>
+              <div className="flex-1 h-6 bg-purple-500 border-2 border-white rounded-lg"></div>
+            </div>
+            <div className="w-3/4 h-3 bg-blue-400 border border-white rounded-md"></div>
+          </div>
         </div>
+
+        <div className="absolute bottom-40 right-20 w-20 h-6 bg-red-400 border-4 border-black rounded-xl transform skew-y-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -487,44 +472,31 @@ export default function Home() {
         className="py-20 bg-white border-b-4 border-black relative overflow-hidden"
       >
         {/* Interactive section decorative elements */}
-        <div className="absolute top-16 left-8 w-6 h-6 bg-blue-500 border-2 border-black transform rotate-45"></div>
-        <div className="absolute top-32 right-12 w-4 h-12 bg-yellow-400 border-2 border-black transform -rotate-12"></div>
+       
+        <div className="absolute top-32 right-12 w-4 h-12 bg-yellow-400 border-2 border-black rounded-xl transform -rotate-12"></div>
 
-        {/* Human figures using the platform */}
-        <div className="absolute top-16 right-20 flex flex-col items-center">
-          {/* Person with laptop */}
-          <div className="w-7 h-7 bg-blue-500 border-2 border-black rounded-full shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"></div>
-          <div className="w-4 h-10 bg-yellow-400 border-2 border-black mt-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"></div>
-          {/* Arms on laptop */}
-          <div className="absolute top-9 -left-2 w-4 h-2 bg-red-500 border border-black transform rotate-15 shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
-          <div className="absolute top-9 -right-2 w-4 h-2 bg-red-500 border border-black transform -rotate-15 shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
-          {/* Legs */}
-          <div className="absolute top-17 -left-0.5 w-2 h-5 bg-green-400 border border-black shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
-          <div className="absolute top-17 right-1 w-2 h-5 bg-green-400 border border-black shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
-          {/* Laptop */}
-          <div className="absolute top-11 -left-1 w-8 h-5 bg-gray-300 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
-            <div className="w-full h-2 bg-blue-400 border-b border-black"></div>
-            <div className="absolute top-3 left-1 w-3 h-1 bg-black"></div>
+        {/* Advertising mockup window - left side */}
+        <div className="absolute top-12 left-12 w-64 h-32 rounded-xl bg-yellow-400 border-3 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transform rotate-2">
+          {/* Window header */}
+          <div className="w-full h-8 bg-lime-400 border-b-2 border-black flex items-center px-2 rounded-t-xl">
+            <span className="font-black text-xs">Worthy AI</span>
+          </div>
+          {/* Content */}
+          <div className="p-2">
+            <div className="bg-lime-400 border-2 border-black rounded-lg px-2 py-1 mb-1 inline-block">
+              <span className="font-black text-xs">ADVERTISING</span>
+            </div>
+            <div className="text-xs font-bold">with</div>
+            <div className="flex items-center space-x-1">
+              <div className="w-4 h-4 bg-blue-500 border border-black rounded-md"></div>
+              <span className="font-black text-sm">Comfortable pricing.</span>
+            </div>
           </div>
         </div>
 
-        {/* Person giving thumbs up */}
-        <div className="absolute bottom-24 left-24 flex flex-col items-center">
-          <div className="w-6 h-6 bg-green-500 border-2 border-black rounded-full shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
-            {/* Happy face */}
-            <div className="absolute top-2 left-1 w-1 h-1 bg-black rounded-full"></div>
-            <div className="absolute top-2 right-1 w-1 h-1 bg-black rounded-full"></div>
-            <div className="absolute bottom-1 left-1 w-4 h-1 bg-black rounded-full"></div>
-          </div>
-          <div className="w-4 h-10 bg-purple-400 border-2 border-black mt-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"></div>
-          {/* Thumbs up */}
-          <div className="absolute top-8 -right-2 w-2 h-4 bg-yellow-500 border border-black transform -rotate-15 shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
-          <div className="absolute top-6 -right-2 w-2 h-2 bg-yellow-500 border border-black shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
-          {/* Other arm */}
-          <div className="absolute top-8 -left-3 w-4 h-2 bg-yellow-500 border border-black transform rotate-10 shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
-          {/* Legs */}
-          <div className="absolute top-16 -left-1 w-2 h-8 bg-green-400 border border-black shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
-          <div className="absolute top-16 right-1 w-2 h-8 bg-green-400 border border-black shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
+        {/* Service tags floating */}
+        <div className="absolute bottom-16 left-1/4 bg-purple-500 border-3 border-black rounded-xl px-4 py-2 transform -rotate-12 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+          <span className="font-black text-white text-sm">Gen-Z</span>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -686,41 +658,35 @@ export default function Home() {
         className="py-20 bg-blue-50 border-b-4 border-black relative overflow-hidden"
       >
         {/* Pricing section accent shapes */}
-        <div className="absolute top-12 left-12 w-14 h-14 bg-yellow-400 border-4 border-black transform rotate-12 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]"></div>
+        <div className="absolute top-12 left-12 w-14 h-14 bg-yellow-400 border-4 border-black rounded-2xl transform rotate-12 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]"></div>
         <div className="absolute top-24 right-16 w-10 h-10 bg-blue-600 border-4 border-black rounded-full shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"></div>
-        <div className="absolute bottom-32 left-1/3 w-6 h-18 bg-red-500 border-4 border-black transform -skew-y-12 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"></div>
+        <div className="absolute bottom-32 left-1/3 w-6 h-18 bg-red-500 border-4 border-black rounded-xl transform -skew-y-12 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"></div>
         
-        <div className="absolute top-1/2 left-8 w-5 h-5 bg-purple-400 border-2 border-black transform rotate-45"></div>
+        <div className="absolute top-1/2 left-8 w-5 h-5 bg-purple-400 border-2 border-black rounded-lg transform rotate-45"></div>
 
-        {/* Human figures representing different pricing tiers */}
-        <div className="absolute top-20 left-16 flex flex-col items-center">
-          {/* Basic user */}
-          <div className="w-5 h-5 bg-gray-400 border border-black rounded-full shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
-          <div className="w-3 h-8 bg-gray-300 border border-black mt-1 shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
-          {/* Basic arms */}
-          <div className="absolute top-6 -left-1 w-2 h-1 bg-gray-500 border border-black shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
-          <div className="absolute top-6 -right-1 w-2 h-1 bg-gray-500 border border-black shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
-          {/* Basic legs */}
-          <div className="absolute top-13 -left-0.5 w-1 h-5 bg-gray-400 border border-black shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
-          <div className="absolute top-13 right-1 w-1 h-5 bg-gray-400 border border-black shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
+        {/* Enterprise pricing window mockup */}
+        <div className="absolute top-8 right-32 w-48 h-28 bg-purple-300 border-4 border-black rounded-xl shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transform rotate-6">
+          {/* Header */}
+          <div className="w-full h-6 bg-lime-400 border-b-2 border-black rounded-t-xl flex items-center px-2">
+            <span className="font-black text-xs">TRANSPARENT</span>
+          </div>
+          {/* Content */}
+          <div className="p-2 space-y-1">
+            <div className="bg-yellow-400 border-2 border-black rounded-lg px-2 py-1 inline-block">
+              <span className="font-black text-xs">PRICING</span>
+            </div>
+            <div className="flex space-x-1">
+              <div className="w-8 h-3 bg-blue-400 border border-black rounded-md"></div>
+              <div className="w-6 h-3 bg-green-400 border border-black rounded-md"></div>
+              <div className="w-10 h-3 bg-pink-400 border border-black rounded-md"></div>
+            </div>
+          </div>
         </div>
 
-        <div className="absolute top-20 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
-          {/* Professional user */}
-          <div className="w-7 h-7 bg-blue-500 border-2 border-black rounded-full shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"></div>
-          <div className="w-5 h-10 bg-blue-400 border-2 border-black mt-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"></div>
-          {/* Professional arms */}
-          <div className="absolute top-8 -left-2 w-4 h-2 bg-yellow-500 border border-black transform rotate-10 shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
-          <div className="absolute top-8 -right-2 w-4 h-2 bg-yellow-500 border border-black transform -rotate-10 shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
-          {/* Professional legs */}
-          <div className="absolute top-17 -left-1 w-2 h-8 bg-green-400 border border-black shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
-          <div className="absolute top-17 right-1 w-2 h-8 bg-green-400 border border-black shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
-          {/* Professional badge */}
-          <div className="absolute -top-1 -right-1 w-3 h-3 bg-yellow-400 border border-black rounded-full shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]">
-            <div className="absolute top-1 left-1 w-1 h-1 bg-black rounded-full"></div>
-          </div>
-          {/* Briefcase */}
-          <div className="absolute top-10 left-6 w-4 h-3 bg-brown-600 border border-black shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
+        {/* Colorful speech bubble */}
+        <div className="absolute bottom-20 right-8 bg-pink-500 border-3 border-black rounded-2xl px-4 py-2 transform -rotate-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+          <span className="font-black text-white text-sm">Simple!</span>
+          <div className="absolute -left-2 bottom-2 w-0 h-0 border-r-[8px] border-r-pink-500 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -799,9 +765,30 @@ export default function Home() {
       {/* Newsletter Section */}
       <section className="py-20 bg-green-200 border-b-4 border-black relative overflow-hidden">
         {/* Newsletter decorative elements */}
-        <div className="absolute top-10 left-16 w-12 h-3 bg-blue-400 border-2 border-black transform rotate-6"></div>
+        <div className="absolute top-10 left-16 w-12 h-3 bg-blue-400 border-2 border-black rounded-full transform rotate-6"></div>
+        <div className="absolute top-20 right-20 w-3 h-12 bg-yellow-400 border-2 border-black rounded-full transform -rotate-12"></div>
         
-       
+        {/* Newsletter notification mockup */}
+        <div className="absolute top-8 left-8 w-52 h-24 bg-white border-4 border-black rounded-xl shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transform -rotate-3">
+          {/* Header */}
+          <div className="w-full h-6 bg-green-400 border-b-2 border-black rounded-t-xl flex items-center px-2">
+            <span className="font-black text-xs">MARKET INSIGHTS</span>
+          </div>
+          {/* Content */}
+          <div className="p-2 space-y-1">
+            <div className="flex items-center space-x-1">
+              <div className="w-2 h-2 bg-red-500 border border-black rounded-full"></div>
+              <span className="font-bold text-xs">Weekly Updates</span>
+            </div>
+            <div className="w-full h-2 bg-blue-400 border border-black rounded-md"></div>
+            <div className="w-3/4 h-2 bg-purple-400 border border-black rounded-md"></div>
+          </div>
+        </div>
+
+        {/* Floating elements */}
+        <div className="absolute bottom-8 left-1/4 bg-orange-500 border-3 border-black rounded-xl px-3 py-1 transform rotate-12 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+          <span className="font-black text-white text-sm">UPDATES</span>
+        </div>
 
         
 
