@@ -42,7 +42,15 @@ export default function Home() {
   ];
 
   // Counter component for animated numbers
-  const Counter = ({ value, suffix, duration = 2000 }: { value: number; suffix: string; duration?: number }) => {
+  const Counter = ({
+    value,
+    suffix,
+    duration = 2000,
+  }: {
+    value: number;
+    suffix: string;
+    duration?: number;
+  }) => {
     const [count, setCount] = useState(0);
     const [isVisible, setIsVisible] = useState(false);
     const counterRef = useRef<HTMLSpanElement>(null);
@@ -70,12 +78,12 @@ export default function Home() {
         const animate = (timestamp: number) => {
           if (!startTime) startTime = timestamp;
           const progress = Math.min((timestamp - startTime) / duration, 1);
-          
+
           const easeOutQuart = 1 - Math.pow(1 - progress, 4);
           const currentCount = Math.floor(easeOutQuart * value);
-          
+
           setCount(currentCount);
-          
+
           if (progress < 1) {
             requestAnimationFrame(animate);
           }
@@ -93,7 +101,8 @@ export default function Home() {
 
     return (
       <span ref={counterRef}>
-        {formatNumber(count)}{suffix}
+        {formatNumber(count)}
+        {suffix}
       </span>
     );
   };
@@ -256,15 +265,27 @@ export default function Home() {
             </nav>
 
             <div className="hidden md:flex items-center space-x-4">
-              <Button
-                variant="outline"
-                className="border-2 border-black font-bold hover:bg-blue-100 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+              <a
+                href="https://github.com/prox004/worthy-ai-v2"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                LOG IN
-              </Button>
-              <Button className="bg-blue-500 hover:bg-blue-600 text-white font-bold border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-                SIGN UP
-              </Button>
+                <Button
+                  variant="outline"
+                  className="border-2 border-black font-bold hover:bg-blue-100 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                >
+                  View on GitHub
+                </Button>
+              </a>
+              <a
+                href="https://app-worthy-ai.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button className="bg-blue-500 hover:bg-blue-600 text-white font-bold border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                  Launch App
+                </Button>
+              </a>
             </div>
 
             <Button
@@ -311,15 +332,27 @@ export default function Home() {
                 PRICING
               </a>
               <div className="px-3 py-2 space-y-2">
-                <Button
-                  variant="outline"
-                  className="w-full border-2 border-black font-bold"
+                <a
+                  href="https://github.com/prox004/worthy-ai-v2"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  LOG IN
-                </Button>
-                <Button className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-                  SIGN UP
-                </Button>
+                  <Button
+                    variant="outline"
+                    className="border-2 border-black font-bold hover:bg-blue-100 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                  >
+                    View on GitHub
+                  </Button>
+                </a>
+                <a
+                  href="https://app-worthy-ai.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button className="bg-blue-500 hover:bg-blue-600 text-white font-bold border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                    Launch App
+                  </Button>
+                </a>
               </div>
             </div>
           </div>
@@ -351,19 +384,32 @@ export default function Home() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button
-              size="lg"
-              className="bg-blue-500 hover:bg-blue-600 text-white font-semibold text-lg px-8 py-4 border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transform hover:translate-x-1 hover:translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all"
+            <a
+              href="https://github.com/prox004/worthy-ai-v2"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Get Started <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="font-semibold text-lg px-8 py-4 border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transform hover:translate-x-1 hover:translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all"
+              <Button
+                size="lg"
+                className="bg-blue-500 hover:bg-blue-600 text-white font-semibold text-lg px-8 py-4 border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transform hover:translate-x-1 hover:translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all"
+              >
+                View on Github <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </a>
+
+            <a
+              href="https://app-worthy-ai.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Learn More
-            </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="font-semibold text-lg px-8 py-4 border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transform hover:translate-x-1 hover:translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all"
+              >
+                Launch App
+              </Button>
+            </a>
           </div>
         </div>
       </section>
@@ -456,10 +502,7 @@ export default function Home() {
                     <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
                       <span className="text-white font-black text-xl relative">
                         {step.step}
-                        {/* Step connector line */}
-                        {index < steps.length - 1 && (
-                          <div className="absolute top-8 left-8 w-1 h-8 bg-black transform rotate-45 hidden md:block"></div>
-                        )}
+                        
                       </span>
                     </div>
                     <CardTitle className="text-2xl font-bold text-black font-display">
@@ -625,7 +668,7 @@ export default function Home() {
                     />
                   </div>
                   <div className="flex justify-center">
-                     <Button className="w-full mt-4 mb-6 bg-blue-500 hover:bg-blue-600 text-white font-bold font-display text-lg py-5 border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transform hover:translate-x-1 hover:translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all">
+                    <Button className="w-full mt-4 mb-6 bg-blue-500 hover:bg-blue-600 text-white font-bold font-display text-lg py-5 border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transform hover:translate-x-1 hover:translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all">
                       ANALYZE CANDIDATE
                     </Button>
                   </div>
@@ -670,7 +713,6 @@ export default function Home() {
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                     <Badge className="bg-yellow-400 text-black border-2 border-black font-bold px-4 py-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] relative">
                       MOST POPULAR
-                      
                     </Badge>
                   </div>
                 )}
